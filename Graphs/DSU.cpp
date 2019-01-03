@@ -11,7 +11,7 @@ template<int sz> struct DSU {
         if(par[node] != node) par[node] = find(par[node]);
         return par[node];
     }
-    void unite(int node1, int node2) { //union-by-rank
+    void unite(int node1, int node2) { //union by rank
         node1 = find(node1);
         node2 = find(node2);
         if(node1 == node2) return;
