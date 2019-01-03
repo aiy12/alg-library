@@ -15,8 +15,8 @@ template<int sz> struct DSU {
         node1 = find(node1);
         node2 = find(node2);
         if(node1 == node2) return;
-        if(sz[node1] < sz[node2]) swap(node1, node2);
-        sz[node1] += sz[node2];
+        if(size[node1] < size[node2]) swap(node1, node2);
+        size[node1] += size[node2];
         par[node2] = node1;
     }
 };
