@@ -15,7 +15,7 @@ struct Point {
         y = b;
     }
     bool operator<(const Point &other) const{
-        if(x == other.x) {
+        if (x == other.x) {
             return y < other.y;
         }
         return x < other.x;
@@ -31,30 +31,30 @@ int main() {
     vector<Point> upper_hull;
     vector<Point> lower_hull;
     vector<Point> pts;
-    for(int i = 0; i < N; i++) {
+    for (int i = 0; i < N; i++) {
         ll x, y; cin >> x >> y;
         pts.pb(Point(x, y));
     }
     // upper hull
-    for(int i = 0; i < pts.size(); i++) {
-        while(upper_hull.size() >= 2 && cross(upper_hull[upper_hull.size()-2], upper_hull[upper_hull.size()-1], pts[i]) >= 0) {
+    for (int i = 0; i < pts.size(); i++) {
+        while (upper_hull.size() >= 2 && cross(upper_hull[upper_hull.size() - 2], upper_hull[upper_hull.size() - 1], pts[i]) >= 0) {
             upper_hull.pop_back();
         }
         upper_hull.push_back(pts[i]);
     }
 
     //lower hull
-    for(int i = pts.size()-1; i >= 0; i--) {
-        while(lower_hull.size() >= 2 && cross(lower_hull[lower_hull.size()-2], lower_hull[lower_hull.size()-1], pts[i]) <= 0) {
+    for (int i = pts.size()-1; i >= 0; i--) {
+        while (lower_hull.size() >= 2 && cross(lower_hull[lower_hull.size() - 2], lower_hull[lower_hull.size() - 1], pts[i]) <= 0) {
             lower_hull.pop_back();
         }
         lower_hull.push_back(pts[i]);
     }
     vector<Point> hull;
-    for(int i = 0; i < lower_hull.size(); i++) {
+    for (int i = 0; i < lower_hull.size(); i++) {
         hull.pb(lower_hull[i]);
     }
-    for(int i = 0; i < upper_hull.size(); i++) {
+    for (int i = 0; i < upper_hull.size(); i++) {
         hull.pb(upper_hull[i]);
     }
 
