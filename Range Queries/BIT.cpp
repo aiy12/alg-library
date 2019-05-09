@@ -1,6 +1,6 @@
 template<int sz> struct BIT {
 	int tree[sz + 10];
-	init() {
+	void init() {
 		memset(tree, 0, sizeof(tree));
 	}
 	void upd(int k, int x) {
