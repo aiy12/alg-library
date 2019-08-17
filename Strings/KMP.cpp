@@ -27,7 +27,7 @@ void KMP(string text, string pat) {
             // solution found
             cout << "sol at index: " << i-j << endl;
         } else if (i < text.length() && text[i] != pat[j]) {
-            else if (j != 0) {
+            if (j != 0) {
                 j = lps[j - 1];
             } else {
                 i++;
