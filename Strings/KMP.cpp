@@ -1,4 +1,4 @@
-vector<int> precomp(string pat) {
+vector<int> precomp(string &pat) {
     vector<int> ret(pat.length());
     ret[0] = 0;
     int len = 0; // length of prev longest prefix suffix
@@ -16,7 +16,7 @@ vector<int> precomp(string pat) {
     return ret;
 }
 
-void KMP(string text, string pat) {
+void KMP(string &text, string &pat) {
     vector<int> lps = precomp(pat);
     int i = 0, j = 0;
     while (i < text.length()) {
