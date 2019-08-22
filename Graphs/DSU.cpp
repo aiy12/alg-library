@@ -2,7 +2,7 @@ template<int sz> struct DSU {
     int par[sz + 5];
     int size[sz + 5];
     DSU() {
-        forn(i, sz + 5) {
+        for (int i = 0; i < sz + 5; i++) {
             par[i] = i;
             size[i] = 1;
         }
