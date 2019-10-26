@@ -4,6 +4,26 @@ template<int sz> struct Matrix {
     Matrix() {
         fill(mat[0], mat[sz] + sz + 1, 0);
     }
+    
+    Matrix operator + (Matrix m) {
+        Matrix c = Matrix();
+        for (int i = 0; i < sz; i++) {
+            for (int j = 0; j < sz; j++) {
+                c[i][j] = (mat[i][j] + m.mat[i][j]) % MOD;
+            }
+        }
+        return c;
+    }
+    
+    Matrix operator - (Matrix m) {
+        Matrix c = Matrix();
+        for (int i = 0; i < sz; i++) {
+            for (int j = 0; j < sz; j++) {
+                c[i][j] = ((mat[i][j] - m.mat[i][j]) % MOD + MOD) % MOD;
+            }
+        }
+        return c;
+    }
 
     Matrix operator * (Matrix m) {
         Matrix c = Matrix();
