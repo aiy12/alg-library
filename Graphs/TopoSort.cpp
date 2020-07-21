@@ -4,10 +4,10 @@ vector<int> adjList[MAXN];
 int inDeg[MAXN];
 
 vector<int> topoSort() {
-    vector<int> order;
-    queue<int> bfs;
+    	vector<int> order;
+    	queue<int> bfs;
     
-    // might need to update if 1-indexed
+    	// might need to update if 1-indexed
 	for (int node = 0; node < n; node++) {
 	    if (inDeg[node] == 0)
 	    bfs.push(node);
