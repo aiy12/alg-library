@@ -50,6 +50,7 @@ long long solve(long long N) {
     return recur(0, 0, 0);
 }
 
+// Note: possible to solve w/ single recursion by including lower bound restriction of a when calculating the dp states
 int main() {
     long long a, b;
     cin >> a >> b >> d >> k;
