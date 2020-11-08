@@ -7,6 +7,7 @@ void sieve(int MX) {
     is_prime[2] = true;
     primes.push_back(2);
     for (int i = 3; i <= MX; i+=2) {
+        if (i+1 <= MX) is_prime[i+1] = false;
         if (is_prime[i]) {
             primes.push_back(i);
         }
