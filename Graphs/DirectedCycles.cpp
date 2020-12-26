@@ -14,7 +14,7 @@ void printCycle(stack<int>& stk, int v) {
         stk.pop();
     }
  
-    vi cyc;
+    vector<int> cyc;
     while (!stk2.empty()) {
         cyc.push_back(stk2.top());
         stk.push(stk2.top());
